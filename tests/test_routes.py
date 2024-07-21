@@ -1,6 +1,6 @@
 import unittest
 import json
-from app import create_app, db
+from app import create_app_test, db
 from app.models import Application 
 from app.utils import assign_grimorio
 
@@ -8,11 +8,7 @@ class TestSolicitudEndpoint(unittest.TestCase):
     
     def setUp(self):
         # Configura la aplicación Flask en modo de prueba
-        self.app = create_app({
-            'TESTING': True,
-            'SQLALCHEMY_DATABASE_URI': 'sqlite:///:memory:',
-            'SQLALCHEMY_TRACK_MODIFICATIONS': False
-        })
+        self.app = create_app_test()
         self.client = self.app.test_client()
         self.ctx = self.app.app_context()
         self.ctx.push()
