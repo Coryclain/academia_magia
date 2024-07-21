@@ -1,0 +1,7 @@
+flask
+flask_swagger
+flask_swagger_ui
+gunicorn
+jsonschema
+psycopg2-binary
+Flask-SQLAlchemy
